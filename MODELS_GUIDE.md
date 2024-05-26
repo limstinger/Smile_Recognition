@@ -67,8 +67,10 @@ val_ds = val_ds.map(lambda path, label: (load_and_preprocess_image(path, label))
 test_ds = test_ds.map(lambda path, label: (load_and_preprocess_image(path, label))).batch(BATCH_SIZE).prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
 ```
 * 위의 train, test, val 세트를 사용하여 텐서플로우 데이터셋을 생성하고, 배치 처리 및 전처리를 설정
+  
+## 모델 설정
 
-## CNN 모델 설계
+### CNN 모델 설계
 ```python
 model = Sequential([
     Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
@@ -81,7 +83,34 @@ model = Sequential([
     Dense(1, activation='sigmoid')
 ])
 ```
+* 'Sequential' : Keras에서 제공하는 모델 유형 중 하나로, 층을 순차적으로 쌓아 올리는 방식
+* 'Conv2D' : 2D 컨볼루션 레이어를 추가
+* 'MaxPooling2D((2*2))' : 2x2 최대 풀링 레이어를 추가
+  * 해당 함수는 계산량을 줄이고 특징의 추출을 도움
+* 'Flatten' : 다차원 배열을 1차원으로 펼침 -> 이는 Dense 레이어에 연결하기 위해 사용
+* 'Dense' : 완전 연결(Dense) 레이어
+* 'Dense(1, activation='sigmoid')' : 이진 분류 문제(웃고 있는지 아닌지)에 대해 적합
 
+### 모델 컴파일
+```python
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+```
+* 'loss='binary_crossentropy' : 이진 분류 문제에 적합한 손실 함수
+* metrics=['accuracy'] : 모델의 성능을 정확도로 측정
 
+### 모델 훈련
+```python
+EPOCHS = 10
+history = model.fit(train_ds, validation_data=val_ds, epochs=EPOCHS)
+```
+
+* EPOCHS의 수를 조절하여 모델의 성능을 설정
+
+### 모델 저장
+```python
+model_save_path = os.path.join(base_dir, 'models', 'celeba_smiling_model.h5')
+model.save(model_save_path)
+```
+* 모델을 지정된 경로에 저장
 
 
