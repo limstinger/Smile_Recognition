@@ -18,4 +18,15 @@ Each image exists at 178x218 resolution and is organised via binary labels for 4
 Source : [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [Kaggle](https://www.kaggle.com/datasets/jessicali9530/celeba-dataset)
 
 ## **Set Up & Prerequisites**
+Build environment:
+- [x] Make sure you have installed, `Python>=3.8`
+- [x] Clone this repository;
+- [x] Run `pip install -r requirements.txt`;
+
+
+## **Examples**
+In this section, we demonstrate how the trained model from `models.py` is used to predict the degree of smiling in images from the CelebA dataset using `generate.py`. The model outputs a score between 0 and 1, indicating the likelihood of the subject smiling.
+
+## **License**
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE_FILE_LINK) file for details.
 
