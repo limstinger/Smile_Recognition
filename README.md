@@ -24,7 +24,7 @@ Build environment:
 - [x] Run `pip install -r requirements.txt`;
 
 ## **Model Configuration**
-For a detailed description of the model, see Description
+For a detailed description of the model, see [MODELS_GUIDE.md](MODELS_GUIDE.md)
 
 * he model is trained with an optimized number of **epochs** and **batch size** to balance between accuracy and training time. <br>
 * Larger epochs provide more opportunities for training, which improves the model's performance, but there is a risk of overfitting, **so use a moderate number of epochs.**
