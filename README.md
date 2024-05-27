@@ -23,6 +23,10 @@ Build environment:
 - [x] Clone this repository;
 - [x] Run `pip install -r requirements.txt`;
 
+## **Usage**
+0. mkdir models (Create a folder 'models')
+1. 
+
 ## **Model Configuration**
 For a detailed description of the model, see [MODELS_GUIDE.md](MODELS_GUIDE.md)
 
