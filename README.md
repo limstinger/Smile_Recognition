@@ -29,6 +29,8 @@ For a detailed description of the model, see [MODELS_GUIDE.md](MODELS_GUIDE.md)
 * he model is trained with an optimized number of **epochs** and **batch size** to balance between accuracy and training time. <br>
 * Larger epochs provide more opportunities for training, which improves the model's performance, but there is a risk of overfitting, **so use a moderate number of epochs.**
 * As the number of epochs increases, the training time for the model also extends. **Therefore, choose the number of epochs with your CPU in mind.**
+
+* Model example : [smile_model](https://drive.google.com/file/d/1m47kNbkW6g-_l7nlMVp8WIoAIuQLmPOF/view?usp=drive_link)
 ## **Examples**
 In this section, we demonstrate how the trained model from `models.py` is used to predict the degree of smiling in images from the CelebA dataset using `generate.py`. The model outputs a score between 0 and 1, indicating the likelihood of the subject smiling.
 
