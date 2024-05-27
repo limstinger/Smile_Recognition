@@ -25,7 +25,9 @@ Build environment:
 
 ## **Usage**
 0. mkdir models (Create a folder 'models')
-1. 
+1. Set the number of epochs in **models.py**
+2. Once the training is complete and celeba_smiling_model.h5 is generated, run **generate.py**
+3. View the results of 4 random photos from the **CelebA dataset**.
 
 ## **Model Configuration**
 For a detailed description of the model, see [MODELS_GUIDE.md](MODELS_GUIDE.md)
@@ -35,6 +37,7 @@ For a detailed description of the model, see [MODELS_GUIDE.md](MODELS_GUIDE.md)
 * As the number of epochs increases, the training time for the model also extends. **Therefore, choose the number of epochs with your CPU in mind.**
 
 * Model example : [smile_model](https://drive.google.com/file/d/1m47kNbkW6g-_l7nlMVp8WIoAIuQLmPOF/view?usp=drive_link)
+
 ## **Examples**
 In this section, we demonstrate how the trained model from `models.py` is used to predict the degree of smiling in images from the CelebA dataset using `generate.py`. The model outputs a score between 0 and 1, indicating the likelihood of the subject smiling.
 
@@ -52,7 +55,8 @@ Below are some examples of the outputs:<br>
 ![Example](https://github.com/limstinger/Smile_Recognition/assets/113160281/9609b61e-6a83-42e2-a3d7-01aafe3b9389)
 
 ## **Limitations**
-
+* Can only measure one attribute (smiling) at the moment, rather than multiple attributes (angry, sad, etc.)
+* Not enough training because you need to set the number of epochs based on your computer's performance
 
 ## **License**
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE_FILE_LINK) file for details.
