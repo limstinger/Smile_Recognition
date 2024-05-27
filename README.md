@@ -22,6 +22,7 @@ Build environment:
 - [x] Make sure you have installed, `Python>=3.8`
 - [x] Clone this repository;
 - [x] Run `pip install -r requirements.txt`;
+- [x] Downroad CelebA data set
 
 ## **Usage**
 0. mkdir models (Create a folder 'models')
