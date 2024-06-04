@@ -1,0 +1,6 @@
+tensorflow==2.x.x
+pandas
+numpy
+opencv-python
+scikit-learn
+matplotlib
